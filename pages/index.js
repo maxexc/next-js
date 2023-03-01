@@ -1,5 +1,7 @@
+import Heading from "../components/Heading";
+
 const Home = () => (
-  <h1>Hello World!</h1>
+  <Heading text="Hello All Worlds!" /> 
 );
 
 export default Home;
