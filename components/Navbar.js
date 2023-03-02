@@ -1,5 +1,6 @@
 
 // import Link from "next/link";
+import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.scss"
 
@@ -10,15 +11,16 @@ const navigation = [
   ];
 
 const Navbar = () => {
+    const {pathname} =useRouter();
     return (
         <nav className={styles.nav}>
             <div className={styles.logo} >
                 maxExc
             </div>
             <div className={styles.links} >
-                <Link href="/">Home</Link>
-                <Link href="/posts">Posts</Link>
-                <Link href="/contacts">Contacts</Link>
+                {navigation.map(({ id, title, path}) => (
+                    <Link key={id} href={path} className={pathname === path ? styles.active : null}>{title}</Link>
+                ))}                
             </div>
         </nav>
     );
