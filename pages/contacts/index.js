@@ -5,6 +5,14 @@ import Heading from "../../components/Heading";
 export const getStaticProps = async () => {
         const response = await fetch('https://jsonplaceholder.typicode.com/users/');
         const data = await response.json();
+        // --- check 404 ---
+        // const data = null;
+
+        if (!data) {
+            return {
+                notFound: true,
+            }
+        }
 
         return {
             props: { contacts: data },
@@ -14,7 +22,7 @@ export const getStaticProps = async () => {
 
 const Contacts = ({ contacts }) => {
     //  ----- we will use the server -----
-    
+
     // const [contacts, setContacts] = useState(null);
 
     // useEffect(() => {
