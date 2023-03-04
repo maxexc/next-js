@@ -1,6 +1,24 @@
 import ContactInfo from "../../components/Contactinfo";
 import Head from "next/head";
-import Heading from "../../components/Heading";
+
+// ----- SSR -----
+export const getServerSideProps = async (context) => {
+    console.log(context);
+    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const data = await response.json();
+    // --- check 404 ---
+    // const data = null;
+
+    if (!data) {
+        return {
+            notFound: true,
+        }
+    }
+
+    return {
+        props: { contacts: data },
+    }
+}
 
 const Contact = ({ contact }) => (
     <>
