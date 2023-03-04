@@ -1,12 +1,10 @@
 import Layout from '../components/Layout';
-import Head from 'next/head';
 import Image from 'next/image';
 import youtubeImg from "../public/youtube.png"
 import '../styles/globals.scss'
 
 const MyApp = ({ Component, pageProps }) => (  
-            <Layout>
-              
+            <Layout>              
               <main>
                 <Component {...pageProps} />
               </main>
@@ -25,8 +23,3 @@ const MyApp = ({ Component, pageProps }) => (
 export default MyApp;
 
 
-// import '@/styles/globals.css'
-
-// export default function App({ Component, pageProps }) {
-//   return <Component {...pageProps} />
-// }

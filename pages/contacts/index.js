@@ -2,7 +2,6 @@ import Head from "next/head";
 import Link from "next/link";
 // import { useEffect, useState } from "react";
 import Heading from "../../components/Heading";
-// import '../../../styles/globals.scss'
 
 
 export const getStaticProps = async () => {
@@ -47,7 +46,6 @@ const Contacts = ({ contacts }) => {
         <ul>
             {contacts && contacts.map(({id, name, email}) => (
                 <li key={id}>
-                    {/* <Link href={`/contacts/${id}`}><strong>{name}</strong> ({email})</Link> */}
                     <Link href={`/contacts/${id}`}>{name}</Link>
                 </li>
             ))}

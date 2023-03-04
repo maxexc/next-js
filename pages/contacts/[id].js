@@ -1,10 +1,11 @@
-import ContactInfo from "../../components/Contactinfo";
 import Head from "next/head";
+import ContactInfo from "../../components/ContactInfo";
 
 // ----- SSR -----
 export const getServerSideProps = async (context) => {
-    console.log(context);
-    const response = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    const { id } = context.params;
+    // console.log(context);
+    const response = await fetch(`https://jsonplaceholder.typicode.com/users/${id}`);
     const data = await response.json();
     // --- check 404 ---
     // const data = null;
@@ -16,7 +17,7 @@ export const getServerSideProps = async (context) => {
     }
 
     return {
-        props: { contacts: data },
+        props: { contact: data },
     }
 }
 
