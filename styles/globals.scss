@@ -19,6 +19,7 @@ body {
 
 main {
   padding: 20px;
+  height: 400px;
   // height: 1500px;
 }
 
@@ -62,4 +63,10 @@ footer {
   display: block;
   max-width: 100%;
   height: auto;
+}
+
+a {
+  color: currentColor;
+  text-decoration: none;
+  cursor: pointer;
 }
