@@ -10,6 +10,8 @@ type socialInfoType = {
   socials: [socialType],
 }
 
+console.log(process.env.API_HOST);
+
 export const getStaticProps:GetStaticProps = async () => {
   try {
   const response = await fetch(`${process.env.API_HOST}/socials/`);
