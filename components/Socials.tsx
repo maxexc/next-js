@@ -23,7 +23,6 @@ const Socials:FC<socialInfoType> = ({ socials }) => {
       { socials.map(({ id, icon, path }) => (
         <li key={id} title={icon}>
           <a href={path} target="_blank" rel="noopener noreferrer" >
-            {/* {icon} */}
             <i className={`fab fa-${icon}`} aria-hidden="true"/>
           </a>
         </li>
