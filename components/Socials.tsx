@@ -1,7 +1,14 @@
 import Head from "next/head";
+import { FC } from "react";
 import styles from "../styles/Socials.module.scss";
+import { socialType } from "../types";
 
-const Socials = ({ socials }) => {
+type socialInfoType = {
+  socials: [socialType],
+}
+
+const Socials:FC<socialInfoType> = ({ socials }) => {
+  
 
   if (!socials) {
     return null;
@@ -14,9 +21,9 @@ const Socials = ({ socials }) => {
     </Head>
     <ul className={styles.socials}>
       {socials && socials.map(({ id, icon, path }) => (
-        <li key={id}>
-          <a href={path} target="_blank" rel="noopener noreferrer">
-            <i className={`fab fa-${icon}`} aria-hidden="true" />
+        <li key={id} title={icon}>
+          <a href={path} target="_blank" rel="noopener noreferrer" >
+            <i className={`fab fa-${icon}`} aria-hidden="true"/>
           </a>
         </li>
       ))}

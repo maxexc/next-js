@@ -1,8 +1,9 @@
+import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Heading from "../../components/Heading";
 
-export const getStaticProps = async () => {
+export const getStaticProps:GetStaticProps = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
     const data = await response.json();
     // --- check 404 ---

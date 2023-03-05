@@ -1,9 +1,10 @@
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import youtubeImg from "../public/youtube.png"
+import youtubeImg from "../public/phonebook-bg1.jpg"
 import '../styles/globals.scss'
+import { AppProps } from 'next/app';
 
-const MyApp = ({ Component, pageProps }) => (  
+const MyApp = ({ Component, pageProps }: AppProps) => (  
             <Layout>              
               <main>
                 <Component {...pageProps} />

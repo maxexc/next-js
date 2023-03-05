@@ -3,6 +3,7 @@ import Image from "next/image";
 import { useRouter } from "next/router";
 import Link from "next/link";
 import styles from "../styles/Navbar.module.scss"
+import { FC } from "react";
 
 const navigation = [
     { id: 1, title: 'Home', path: '/' },
@@ -10,12 +11,12 @@ const navigation = [
     { id: 3, title: 'Contacts', path: '/contacts' },
   ];
 
-const Navbar = () => {
+const Navbar:FC = () => {
     const {pathname} =useRouter();
     return (
         <nav className={styles.nav}>
             <div className={styles.logo} >
-                <Image src="/logo.png" width="60" height="60" alt="maxExc" />              
+                <Image src="/logo.svg" width="60" height="60" alt="maxExc" />              
             </div>
             <div className={styles.links} >
                 {navigation.map(({ id, title, path}) => (

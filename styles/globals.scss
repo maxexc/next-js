@@ -6,8 +6,12 @@ body {
 
 body {
   font-family: 'Montserrat', sans-serif;
-  background: linear-gradient(to bottom, #4e54c8, #8f94fb);
-  color: #fff;
+  background-image: url('../public/background2.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
+  // background: linear-gradient(to bottom, #4e54c8, #8f94fb);
+  color: #3549a1;
   font-size: 20px;
 }
 
@@ -63,10 +67,26 @@ footer {
   display: block;
   max-width: 100%;
   height: auto;
+  
 }
 
 a {
   color: currentColor;
   text-decoration: none;
   cursor: pointer;
+  &:hover {
+    transition: color 100ms linear;
+    color: rgb(50, 132, 255);
+    text-shadow: 3px 6px 6px rgba(0, 0, 0, 0.15);
+  }
+}
+span {
+  content-visibility: hidden;
+}
+
+footer {
+  color: #fff;
+  // &:hover {
+  //   color: rgb(137, 183, 252);
+  // }
 }
