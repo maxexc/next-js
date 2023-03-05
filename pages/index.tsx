@@ -11,6 +11,7 @@ type socialInfoType = {
 }
 
 export const getStaticProps:GetStaticProps = async () => {
+  try {
   const response = await fetch(`${process.env.API_HOST}/socials/`);
   const data = await response.json();
 
@@ -23,8 +24,12 @@ export const getStaticProps:GetStaticProps = async () => {
   return {
       props: { socials: data },
   }
+} catch {
+  return {
+    props: {socials: null},
+  }
 }
-
+}
 const Home:FC<socialInfoType> = ({ socials }) => (
   <div className={styles.wrapper}>
     <Head>
@@ -36,6 +41,3 @@ const Home:FC<socialInfoType> = ({ socials }) => (
 );
 
 export default Home;
-
-
-
