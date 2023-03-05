@@ -21,9 +21,9 @@ const Socials:FC<socialInfoType> = ({ socials }) => {
     </Head>
     <ul className={styles.socials}>
       { socials.map(({ id, icon, path }) => (
-        <li key={id} title={icon}>
+        <li key={id} >
           <a href={path} target="_blank" rel="noopener noreferrer" >
-            <i className={`fab fa-${icon}`} aria-hidden="true"/>
+            <i className={`fab fa-${icon}`} aria-hidden="true"/><span className="icon">{icon}</span> 
           </a>
         </li>
       ))}
