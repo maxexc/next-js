@@ -14,7 +14,8 @@ console.log(process.env.API_HOST);
 
 export const getStaticProps:GetStaticProps = async () => {
   try {
-  const response = await fetch(`${process.env.API_HOST}/socials/`);
+  // const response = await fetch(`${process.env.API_HOST}/socials/`);
+  const response = await fetch(`https://next-js-maxexc.vercel.app/api/socials/`);
   const data = await response.json();
 
   if (!data) {
