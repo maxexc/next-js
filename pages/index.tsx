@@ -1,4 +1,4 @@
-import { GetStaticProps } from "next";
+// import { GetStaticProps } from "next";
 import { FC } from "react";
 import { socialType } from "../types";
 import Head from "next/head";
@@ -10,9 +10,12 @@ type socialInfoType = {
   socials: [socialType],
 }
 
+console.log("test");
+
 console.log(process.env.NEXT_PUBLIC_API_HOST);
 
-export const getStaticProps:GetStaticProps = async () => {
+export const getServerSideProps = async () => {
+// export const getStaticProps:GetStaticProps = async () => {
   try {
   const response = await fetch("https://next-js-nine-teal.vercel.app/api/socials/");
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/socials/`);
