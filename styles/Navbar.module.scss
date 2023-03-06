@@ -4,16 +4,34 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+    // font-size: small;
+    // height: 50px;
+    
+    @media screen and (max-width: 768px) {
+      // background-color: blue;
+      // font-size: small;
+      // gap: 10px;
+    }
+    @media screen and (min-width: 920px) {
+      // height: 50%;
+      // background-color: tomato;
+    }
 
     .logo {
-      // outline: tomato;
-      // background-color: tomato;
       color: #fff;
       fill: #fff;
     }
   
     .links {
       height: 100%;
+      background-color: unset;
+      font-size: small;
+      @media screen and (min-width: 380px) {
+        font-size: medium;
+      }
+      @media screen and (min-width: 420px) {
+        font-size: unset;
+      }
     }
   
     a {
