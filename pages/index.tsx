@@ -1,10 +1,10 @@
-import Socials from "../components/Socials";
+import { GetStaticProps } from "next";
+import { FC } from "react";
+import { socialType } from "../types";
 import Head from "next/head";
 import Heading from "../components/Heading";
+import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss"
-import { GetStaticProps } from "next";
-import { socialType } from "../types";
-import { FC } from "react";
 
 type socialInfoType = {
   socials: [socialType],
@@ -14,7 +14,8 @@ console.log(process.env.NEXT_PUBLIC_API_HOST);
 
 export const getStaticProps:GetStaticProps = async () => {
   try {
-  const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/socials/`);
+  const response = await fetch("https://next-js-nine-teal.vercel.app/api/socials/");
+  // const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/socials/`);
   const data = await response.json();
 
   if (!data) {
@@ -31,7 +32,8 @@ export const getStaticProps:GetStaticProps = async () => {
     props: {socials: null},
   }
 }
-}
+};
+
 const Home:FC<socialInfoType> = ({ socials }) => (
   <div className={styles.wrapper}>
     <Head>
