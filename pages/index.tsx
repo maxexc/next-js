@@ -16,7 +16,7 @@ console.log(process.env.NEXT_PUBLIC_API_HOST);
 
 export const getServerSideProps = async () => {
 // export const getStaticProps:GetStaticProps = async () => {
-  try {
+  // try {
   const response = await fetch("https://next-js-nine-teal.vercel.app/api/socials/");
   // const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}/socials/`);
   const data = await response.json();
@@ -30,12 +30,13 @@ export const getServerSideProps = async () => {
   return {
       props: { socials: data },
   }
-} catch {
-  return {
-    props: {socials: null},
-  }
 }
-};
+//  catch {
+//   return {
+//     props: {socials: null},
+//   }
+// }
+// };
 
 const Home:FC<socialInfoType> = ({ socials }) => (
   <div className={styles.wrapper}>
