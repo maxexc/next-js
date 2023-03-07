@@ -24,9 +24,6 @@ export const getStaticProps:GetStaticProps = async () => {
 const Posts = ({ posts }) => {
     return (
         <MainContainer nameTitle={"Posts"} keyword={"Post list:"}>
-            {/* <Head>
-                <title>Posts</title>
-            </Head> */}
             <Heading text="Post list:" />
             <ul>
                 {posts && posts.map(({ id, title }) => (

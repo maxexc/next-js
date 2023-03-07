@@ -38,10 +38,6 @@ export const getStaticProps:GetStaticProps = async () => {
 const Home:FC<socialInfoType> = ({ socials }) => (
   <>
   <MainContainer nameTitle={"Home"} keyword={"application"}>
-    {/* <Head>
-      <title>Home</title>
-      <meta name="Next.js project created by maxexc" content="application" ></meta>
-    </Head> */}
     <div className={styles.wrapper}>
       <Heading text="Next.js Application" />
       <Socials socials={socials} />
