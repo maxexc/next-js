@@ -2,6 +2,7 @@ import { GetStaticProps } from "next";
 import Head from "next/head";
 import Link from "next/link";
 import Heading from "../../components/Heading";
+import MainContainer from "../../components/MainContainer";
 
 export const getStaticProps:GetStaticProps = async () => {
     const response = await fetch('https://jsonplaceholder.typicode.com/posts/');
@@ -22,10 +23,10 @@ export const getStaticProps:GetStaticProps = async () => {
 
 const Posts = ({ posts }) => {
     return (
-        <>
-            <Head>
+        <MainContainer nameTitle={"Posts"} keyword={"Post list:"}>
+            {/* <Head>
                 <title>Posts</title>
-            </Head>
+            </Head> */}
             <Heading text="Post list:" />
             <ul>
                 {posts && posts.map(({ id, title }) => (
@@ -35,7 +36,7 @@ const Posts = ({ posts }) => {
                 ))}
             </ul>      
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam, ea!</p>
-        </>
+        </MainContainer >
     );
 };
 

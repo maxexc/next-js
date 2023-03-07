@@ -5,6 +5,8 @@ import Head from "next/head";
 import Heading from "../components/Heading";
 import Socials from "../components/Socials";
 import styles from "../styles/Home.module.scss";
+import MainContainer from "../components/MainContainer";
+// import MainContainer from "../components/MainContainer";
 
 console.log(process.env.NEXT_PUBLIC_API_HOST);
 
@@ -34,13 +36,18 @@ export const getStaticProps:GetStaticProps = async () => {
 };
 
 const Home:FC<socialInfoType> = ({ socials }) => (
-  <div className={styles.wrapper}>
-    <Head>
+  <>
+  <MainContainer nameTitle={"Home"} keyword={"application"}>
+    {/* <Head>
       <title>Home</title>
-    </Head>
-    <Heading text="Next.js Application" />
-    <Socials socials={socials} />
-  </div>
+      <meta name="Next.js project created by maxexc" content="application" ></meta>
+    </Head> */}
+    <div className={styles.wrapper}>
+      <Heading text="Next.js Application" />
+      <Socials socials={socials} />
+    </div>
+  </MainContainer >
+  </>
 );
 
 export default Home;

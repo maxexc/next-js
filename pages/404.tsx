@@ -3,6 +3,7 @@ import { useRouter } from "next/router";
 import Heading from "../components/Heading";
 import styles from "../styles/404.module.scss"
 import Head from "next/head";
+import MainContainer from "../components/MainContainer";
 
 const Error = () => {
   const router = useRouter()
@@ -14,15 +15,12 @@ const Error = () => {
   }, [router])
 
   return (
-        <div className={styles.wrapper}>
-              <Head>
-                  <title>Error</title>
-              </Head>
-          <div>
+        <MainContainer nameTitle={"Error"} keyword={"error message"} >              
+          <div className={styles.wrapper}>
             <Heading text="404" />
             <Heading text="Something is going wrong..." />
           </div>
-        </div>
+        </MainContainer>
   )
 }
 

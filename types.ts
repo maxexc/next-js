@@ -22,3 +22,9 @@ export type socialType = {
     icon: string,
     path: string,
 }
+
+export type mainContainerType = {
+    children: any,
+    nameTitle: string,
+    keyword: string,
+}

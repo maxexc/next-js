@@ -4,6 +4,7 @@ import Link from "next/link";
 import { FC } from "react";
 // import { useEffect, useState } from "react";
 import Heading from "../../components/Heading";
+import MainContainer from "../../components/MainContainer";
 import { contactType } from "../../types";
 
 type contactsTypeProps ={
@@ -45,10 +46,10 @@ const Contacts:FC<contactsTypeProps> = ({ contacts }) => {
     
 
     return (
-    <>
-        <Head>
+    <MainContainer nameTitle={"Contacts"} keyword={"Contacts list:"}>
+        {/* <Head>
             <title>Contacts</title>
-        </Head>
+        </Head> */}
         <Heading text="Contacts list:" />
         <ul>
             {contacts && contacts.map(({id, name, email}) => (
@@ -57,7 +58,7 @@ const Contacts:FC<contactsTypeProps> = ({ contacts }) => {
                 </li>
             ))}
         </ul>
-    </>
+    </MainContainer >
 );
 }
 
