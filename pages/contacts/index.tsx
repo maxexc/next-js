@@ -47,7 +47,7 @@ const Contacts:FC<contactsTypeProps> = ({ contacts }) => {
 
     return (
     <MainContainer nameTitle={"Contacts"} keyword={"Contacts list:"}>        
-        <Heading text="Contacts list:" />
+        <Heading text="Server-Side Rendering (SSR),Contacts list:" />
         <ul>
             {contacts && contacts.map(({id, name, email}) => (
                 <li key={id}>

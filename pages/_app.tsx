@@ -1,6 +1,6 @@
 import Layout from '../components/Layout';
 import Image from 'next/image';
-import youtubeImg from "../public/phonebook-bg1.jpg"
+import backgroundImg from "../public/phonebook-bg1.jpg"
 import '../styles/globals.scss'
 import { AppProps } from 'next/app';
 
@@ -11,7 +11,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => (
               </main>
               <div className='thumb'>
                 <Image 
-                  src={youtubeImg}              
+                  src={backgroundImg}              
                   alt="preview"
                   className='imgWrapper'   
                   loading='lazy'  

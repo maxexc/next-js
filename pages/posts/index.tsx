@@ -24,7 +24,7 @@ export const getStaticProps:GetStaticProps = async () => {
 const Posts = ({ posts }) => {
     return (
         <MainContainer nameTitle={"Posts"} keyword={"Post list:"}>
-            <Heading text="Post list:" />
+            <Heading text="Static site generation (SSG), Post list:" />
             <ul>
                 {posts && posts.map(({ id, title }) => (
                     <li key={id}>
